@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de 15 Anos | Gabriela</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main-wrapper">
+    
+    <!-- Área do Vídeo com a Imagem 1 posicionada diretamente atrás -->
+    <div class="video-hero-wrapper">
+      <!-- Imagem de Fundo inserida diretamente no HTML -->
+      <img src="1.jpg.jpeg" alt="Fundo Encantado" class="hero-background-img">
+      
+      <!-- Moldura do Vídeo sobreposta à Imagem 1 -->
+      <div class="book-frame">
+        <div class="gold-border-outer">
+          <div class="gold-border-inner">
+            <video id="conviteVideo" playsinline autoplay muted loop controls poster="1.jpg.jpeg" preload="auto">
+              <source src="Convite-Gabriela_1-2.mp4" type="video/mp4">
+              <source src="Convite Gabriela_1.mp4" type="video/mp4">
+              Seu navegador não suporta reprodução de vídeo.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção de Detalhes do Evento -->
+    <main class="content-wrapper">
+      <section class="quote-card">
+        <p class="quote-text">
+          “Prepare-se para viver uma noite encantada, onde sonhos se tornam realidade e cada detalhe foi pensado com muito amor.”
+        </p>
+      </section>
+
+      <section class="event-details">
+        <div class="detail-card">
+          <div class="detail-icon">📅</div>
+          <h3>Data</h3>
+          <p class="highlight">21 de Novembro</p>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">🕗</div>
+          <h3>Horário</h3>
+          <p class="highlight">20:00 h</p>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">🏰</div>
+          <h3>Local</h3>
+          <p class="highlight">Portal dos Sonhos</p>
+        </div>
+      </section>
+
+      <!-- Botões de Ação -->
+      <section class="actions-section">
+        <div class="button-group">
+          <a href="https://forms.gle/4V6UrFRPJSiVJ8iL6" target="_blank" rel="noopener noreferrer" class="royal-link-btn">
+            Confirmação de presença
+          </a>
+          <a href="https://maps.app.goo.gl/QvzNVj7bUffyjVxb8" target="_blank" rel="noopener noreferrer" class="royal-link-btn">
+            Como chegar
+          </a>
+          <a href="dress-code.html" class="royal-link-btn">
+            Dress code
+          </a>
+          <a href="sugestao-de-presente.html" class="royal-link-btn">
+            Sugestão de presente
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>15 Anos de Gabriela &bull; Uma Noite Inesquecível</p>
+    </footer>
+  </div>
+
+  <!-- Script para reproduzir automaticamente com áudio -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('conviteVideo');
+      video.muted = true;
+
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          const unlockAudio = () => {
+            video.muted = false;
+            video.play();
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('touchstart', unlockAudio);
+            document.removeEventListener('scroll', unlockAudio);
+          };
+
+          document.addEventListener('click', unlockAudio, { once: true });
+          document.addEventListener('touchstart', unlockAudio, { once: true });
+          document.addEventListener('scroll', unlockAudio, { once: true });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

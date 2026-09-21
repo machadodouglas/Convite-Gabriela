@@ -1,0 +1,320 @@
+/* ==========================================================================
+   Tema Conto de Fadas / Castelo Encantado
+   ========================================================================== */
+
+:root {
+  --blue-night: #0b1528;
+  --blue-royal: #12284c;
+  --gold-light: #f7e09e;
+  --gold-base: #dfb256;
+  --gold-dark: #a97c2f;
+  --pink-rose: #f9d5df;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--blue-night);
+  color: #f0e6d2;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Área do Topo: Imagem 1 no Fundo + Vídeo Sobreposto
+   ========================================================================== */
+
+.video-hero-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Imagem 1 no fundo da área do vídeo */
+.hero-background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.75) contrast(1.05);
+  z-index: 1;
+}
+
+/* Moldura e Vídeo posicionados à frente da Imagem 1 */
+.book-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.gold-border-outer {
+  background: linear-gradient(145deg, var(--gold-light), var(--gold-dark), var(--gold-base));
+  padding: 6px;
+  border-radius: 16px;
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.85),
+    0 0 30px rgba(223, 178, 86, 0.6);
+}
+
+.gold-border-inner {
+  background: var(--blue-royal);
+  padding: 3px;
+  border-radius: 11px;
+  border: 1px solid rgba(247, 224, 158, 0.5);
+  overflow: hidden;
+}
+
+#conviteVideo {
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  background: #000;
+}
+
+/* ==========================================================================
+   Seções de Conteúdo e Cartões
+   ========================================================================== */
+
+.content-wrapper {
+  width: 100%;
+  max-width: 650px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.quote-card {
+  background: rgba(18, 40, 76, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(223, 178, 86, 0.4);
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.quote-text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--pink-rose);
+}
+
+.event-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.detail-card {
+  background: rgba(18, 40, 76, 0.92);
+  border: 1px solid var(--gold-dark);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-light);
+}
+
+.detail-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.detail-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  letter-spacing: 2px;
+  margin-bottom: 0.2rem;
+}
+
+.detail-card .highlight {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Botões de Ação (RSVP & Local)
+   ========================================================================== */
+
+.actions-section {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(18, 40, 76, 0.95), rgba(11, 21, 40, 0.98));
+  border: 1px solid rgba(223, 178, 86, 0.45);
+  border-radius: 14px;
+  padding: 1.6rem 1.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--pink-rose);
+  margin-bottom: 1.2rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.royal-link-btn {
+  background: linear-gradient(135deg, var(--gold-base), var(--gold-dark));
+  color: #0b1528;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.85rem 1.2rem;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.royal-link-btn:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-base));
+  transform: translateY(-2px);
+}
+
+.royal-link-btn.outline-btn {
+  background: transparent;
+  border: 1px solid var(--gold-base);
+  color: var(--gold-light);
+}
+
+.royal-link-btn.outline-btn:hover {
+  background: rgba(223, 178, 86, 0.2);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Páginas de Informações
+   ========================================================================== */
+
+.info-page {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.info-background-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.55) contrast(1.05);
+  z-index: 0;
+}
+
+.info-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 650px;
+  padding: 2rem 1.4rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(18, 40, 76, 0.95), rgba(11, 21, 40, 0.98));
+  border: 1px solid rgba(223, 178, 86, 0.45);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.info-card h1 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.info-card p,
+.info-card li {
+  color: #f0e6d2;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.info-card ul {
+  margin: 1rem auto 1.2rem;
+  padding-left: 1.2rem;
+  max-width: 330px;
+  text-align: left;
+}
+
+.info-card .royal-link-btn {
+  display: inline-block;
+  margin-top: 1.4rem;
+}
+
+/* ==========================================================================
+   Rodapé
+   ========================================================================== */
+
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  color: rgba(247, 224, 158, 0.8);
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .button-group {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .button-group .royal-link-btn {
+    flex: 1 1 220px;
+  }
+}
